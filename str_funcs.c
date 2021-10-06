@@ -44,7 +44,15 @@ int mystrcmp( char *s1, char *s2 ) {
     return -1;
 }
 
-//char * mystrchr( char *s, char c ) {
-//
-//}
-
+char * mystrchr( char *s, char c ) {
+    int i = 0;
+    int len = mystrlen(s);
+    while (i <= len) {
+        if (s[i] == c) {
+            char *p = &(s[i]);
+            return p;
+        }
+        i++;
+    }
+    return NULL;
+}
