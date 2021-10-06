@@ -19,7 +19,6 @@ char * mystrcpy( char *dest, char *source ) {
     return dest;
 }
 
-
 char * mystrcat( char *dest, char *source ) {
     int end = mystrlen(dest);
     int i = 0;
@@ -27,6 +26,7 @@ char * mystrcat( char *dest, char *source ) {
         dest[end + i] = source[i];
         i++;
     }
+    dest[end + i] = '\0';
     return dest;
 }
 
