@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 int mystrlen( char *s ) {
   int count = 0;
@@ -9,10 +10,13 @@ int mystrlen( char *s ) {
   return count;
 }
 
-char * mystrcpy( char *dest, char *source ) {
+char * mystrncpy( char *dest, char *source, int n ) {
     int i = 0;
-    while (source[i]) {
-        dest[i] = source[i];
+    int fill_with_nulls = 0;
+    while (i < n) {
+        if (!source[i]) fill_with_nulls = 1;
+        if (fill_with_nulls) dest[i] = '\0';
+        else dest[i] = source[i];
         i++;
     }
     dest[i] = '\0';
@@ -55,19 +59,4 @@ char * mystrchr( char *s, char c ) {
         i++;
     }
     return NULL;
-}
-
-char * mystrstr( char *s1, char * s2 ) {
-  int i = 0;
-  while ((*s1) && (i != mystrlen(s2) - 1)) {
-    if ((*s1) == s2[i]) i++;
-    else i = 0;
-    s1++;
-  }
-
-  if (i == (mystrlen(s2) - 1)) {
-    s1--;
-    return s1;
-  }
-  return NULL;
 }

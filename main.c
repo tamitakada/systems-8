@@ -18,13 +18,13 @@ int main() {
   printf("[standard]:\t%lu\n", strlen(s2) );
   printf("[mine]:\t\t%d\n", mystrlen(s2) );
 
-  printf("\nTesting strcpy(s1, s2):\n");
-  printf("[standard]:\t[%s]\n", strcpy(s1, s2) );
-  printf("[mine]:\t\t[%s]\n", mystrcpy(s1, s2) );
+//  printf("\nTesting strcpy(s1, s2):\n");
+//  printf("[standard]:\t[%s]\n", strcpy(s1, s2) );
+//  printf("[mine]:\t\t[%s]\n", mystrcpy(s1, s2) );
 
-//  printf("\nTesting strncpy(s1, s3, 3):\n");
-//  printf("[standard]:\t[%s]\n", strncpy(s1, s3, 3) );
-//  printf("[mine]:\t\t[%s]\n", mystrncpy(s1, s3, 3) );
+  printf("\nTesting strncpy(s1, s3, 3):\n");
+  printf("[standard]:\t[%s]\n", strncpy(s1, s3, 3) );
+  printf("[mine]:\t\t[%s]\n", mystrncpy(s1, s3, 3) );
 
   printf("\nTesting strcat(s1, s3):\n");
   printf("[standard]:\t[%s]\n", strcat(s1, s3) );
@@ -60,5 +60,4 @@ int main() {
   printf("\t\t[mine]:\t\t[%d]\n", mystrcmp("abc", "abc") );
 
   return 0;
->>>>>>> fbfc5915a57bbcc2961780c7b42aac209cd0eca2
 }
