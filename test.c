@@ -37,7 +37,7 @@ void test_len() {
 void test_copy() {
     srand(time(NULL));
     
-    printf("-- Testing mystrcpy --\n");
+    printf("-- Testing mystrncpy --\n");
     int i;
     for (i = 0; i < 100; i++) {
         int len = (rand() % 300) + 1;
@@ -48,13 +48,15 @@ void test_copy() {
         char official_dest[dest_len];
         char dest[dest_len];
         
-        char *official = strcpy(official_dest, arr);
-        char *self = mystrcpy(dest, arr);
+        int num = (rand() % (dest_len - len)) + 1;
+        
+        char *official = strncpy(official_dest, arr, num);
+        char *self = mystrncpy(dest, arr, num);
         
         if (strcmp(official, self)) {
             printf(
-                "Random Test #%d out of 100 failed: \nOfficial copy: [%s]\nMy copy: [%s]\nArray: [%s]\n",
-                i, official, self, arr
+                "Random Test #%d out of 100 failed: \nOfficial copy: [%s]\nMy copy: [%s]\nArray: [%s]\nUp to: %d\n",
+                i, official, self, arr, num
             );
             break;
         } else if (i == 99) {
